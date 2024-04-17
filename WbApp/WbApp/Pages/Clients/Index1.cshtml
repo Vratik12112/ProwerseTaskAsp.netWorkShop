@@ -1,0 +1,45 @@
+﻿@page
+@model WbApp.Pages.Clients.Index1Model
+@{
+    ViewData["Title"] = "Customer Vehicles";
+}
+<h1 class="mt-4 mb-3">Customer Vehicles</h1>
+
+<form method="get" class="mb-4">
+    <div class="input-group">
+        <label for="customerName" class="input-group-text">Customer Name:</label>
+        <input type="text" id="customerName" name="customerName" class="form-control" placeholder="Search by Customer Name" required>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+</form>
+
+@if (Model.CustomerVehicles != null && Model.CustomerVehicles.Count > 0)
+{
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Vehicle ID</th>
+                    <th>Make</th>
+                    <th>Model</th>
+                    <th>Year</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var vehicle in Model.CustomerVehicles)
+                {
+                    <tr>
+                        <td>@vehicle.VehicleId</td>
+                        <td>@vehicle.Make</td>
+                        <td>@vehicle.Model</td>
+                        <td>@vehicle.Year</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <p style="color :red">Enter The Name Of Customer.</p>
+}

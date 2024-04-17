@@ -1,0 +1,31 @@
+﻿@page
+@model WbApp.Pages.Clients.Index2Model
+@{
+    ViewData["Title"] = "Book Slot";
+}
+<h1 class="mt-4 mb-3">Book Slot</h1>
+
+@if (TempData["BookingMessage"] != null)
+{
+    <div class="alert alert-success mt-3">@TempData["BookingMessage"]</div>
+}
+
+<div class="mt-4">
+    <form method="post">
+        <div class="form-group">
+            <label for="vehicleId">Select Vehicle:</label>
+            <select id="vehicleId" name="vehicleId" class="form-control">
+                @foreach (var vehicle in Model.Vehicles)
+                {
+                    <option value="@vehicle.VehicleId">@vehicle.Make - @vehicle.Model - @vehicle.Year</option>
+                }
+            </select>
+        </div>  
+        <div class="form-group">
+            <label for="bookingDate">Booking Date:</label>
+            <input type="date" id="bookingDate" name="bookingDate" class="form-control" required><br/>
+            <p style="color :red"> Everyday only 4 slots can be booked </p>
+        </div>
+        <button type="submit" class="btn btn-primary">Book Slot</button>
+    </form>
+</div>
