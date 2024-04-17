@@ -1,6 +1,6 @@
 Overview
-This guide will help you set up the Web App Workshop Management System, which includes four navigation sections, each designed to retrieve specific data according to requirements. Additionally, bonus features are included in the system. We use Razor methods for data retrieval and insertion.
-
+This guide will help you set up the Web App Workshop Management System, which includes four navigation sections, each designed to retrieve specific data according to requirements. Additionally, bonus features are included in the system. I use Razor methods for data retrieval and insertion.
+you will finds files in    Pages/Clients/index.html...etc
 Project Installation Guide
 Pre-requisites
 Visual Studio 2022: Ensure you have Visual Studio 2022 installed on your machine.
